@@ -2,7 +2,8 @@ package se.magnus.microservices.core.product;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import se.magnus.microservices.api.core.product.Product;
+import se.magnus.microservices.core.product.service.Product;
+
 
 public interface ProductService {
     @GetMapping(

@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
-import se.magnus.microservices.api.core.product.Product;
+
 import se.magnus.microservices.util.exceptions.InvalidInputException;
 import se.magnus.microservices.util.exceptions.NotFoundException;
 
@@ -50,18 +50,5 @@ class ProductServiceApplicationTests {
                 .jsonPath("$.message").isEqualTo("No se encontró ningún producto para el ID: " + productId);
     }
 
-    @Test
-    public Mono<Product> getProduct(@PathVariable("productId") int productId) {
 
-        // ¡Este bloque es el que hace pasar la prueba!
-        if (productId < 1) {
-            throw new InvalidInputException("ID inválido: " + productId);
-        }
-
-        if (productId == 13) {
-            throw new NotFoundException("No se encontró ningún producto para el ID: " + productId);
-        }
-
-        return Mono.just(new Product(productId, "Nombre de prueba: " + productId, 123));
-    }
 }

@@ -15,10 +15,8 @@
     <name>chapter3-multi-module</name>
 
     <modules>
-        <module>product-composite-service</module>
-        <module>API</module>
-        <module>product-service</module>
+        <module>api</module>
         <module>util</module>
-
+        <module>product-service</module>
     </modules>
 </project>
